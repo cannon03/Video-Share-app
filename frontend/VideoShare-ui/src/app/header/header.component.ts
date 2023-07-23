@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {OidcSecurityService} from "angular-auth-oidc-client";
 import {Router} from "@angular/router";
+import {CallbackComponent} from "../callback/callback.component";
 
 @Component({
   selector: 'app-header',
@@ -23,8 +24,10 @@ export class HeaderComponent implements OnInit{
 
   login() {
     this.oidcSecurityService.authorize();
+    this.router.navigateByUrl('');
   }
   logoff(){
     this.oidcSecurityService.logoffLocal();
+    this.router.navigateByUrl('');
   }
 }

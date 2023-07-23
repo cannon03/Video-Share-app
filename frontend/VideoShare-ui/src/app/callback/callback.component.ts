@@ -11,6 +11,7 @@ export class CallbackComponent {
 
   constructor(private userService:UserService,private router:Router) {
     this.userService.registerUser();
+    this.router.navigateByUrl('/callback');
     this.router.navigateByUrl('');
   }
 }
